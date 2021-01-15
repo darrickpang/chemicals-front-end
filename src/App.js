@@ -9,7 +9,7 @@ class App extends React.Component {
   state = {
     user: {
       id: null,
-      username: "",
+      name: "",
     },
     token: ""
   }
@@ -32,16 +32,16 @@ class App extends React.Component {
       this.setState({
         user: {
           id: json.user.data.attributes.id,
-          username: json.user.data.attributes.username,
+          name: json.user.data.attributes.name,
         },
         token: json.token
       }, () => this.props.history.push('/user_main'))
     }
   }
 
-  userLogin = ({username, password}) => {
+  userLogin = ({name, password}) => {
     let user = {
-      username: username,
+      name: name,
       password: password
     }
 
@@ -62,9 +62,9 @@ class App extends React.Component {
     })
   }
 
-  userSignUp = ({username, password}) => {
+  userSignUp = ({name, password}) => {
     let newUser = {
-      username: username,
+      name: name,
       password: password,
     }
     

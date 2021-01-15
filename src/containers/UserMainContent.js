@@ -6,7 +6,7 @@ class UserMainContent extends React.Component {
     renderUserInfo = () => {
         return (
             <div className="student-info">
-                <h3>User name: {this.props.user.username}</h3>
+                <h3>User name: {this.props.user.name}</h3>
             </div>
         )
     }
