@@ -3,9 +3,8 @@ import { Button, Card, Form, Input, Container, Col } from "reactstrap";
 
 export default class UserLoginSignUp extends React.Component {
     state = {
-        name: "",
-        password: "",
-        age: null,
+        username: "",
+        password: ""
     }
 
     handleOnChange = (e) => {
@@ -21,11 +20,9 @@ export default class UserLoginSignUp extends React.Component {
                 this.props.userSignUp(this.state)
             }}>
                 <label>Name </label>
-                <Input name="name" placeholder="Name" type="text" onChange={this.handleOnChange}/><br/>
+                <Input name="username" placeholder="Name" type="text" onChange={this.handleOnChange}/><br/>
                 <label>Password </label>
                 <Input name="password" placeholder="Password" type="password" onChange={this.handleOnChange}/><br/>
-                <label>Age </label>
-                <Input name="age" placeholder="Age" type="number" onChange={this.handleOnChange}/><br/>
                 <Button block className="login" variant='secondary' type="submit">Sign Up</Button>
                 <Button block className="login" variant='secondary' onClick={() => window.location = "/"}>Go Back</Button>
             </Form>

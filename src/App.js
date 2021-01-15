@@ -9,8 +9,7 @@ class App extends React.Component {
   state = {
     user: {
       id: null,
-      name: "",
-      age: "",
+      username: "",
     },
     token: ""
   }
@@ -33,17 +32,16 @@ class App extends React.Component {
       this.setState({
         user: {
           id: json.user.data.attributes.id,
-          name: json.user.data.attributes.name,
-          age: json.user.data.attributes.age
+          username: json.user.data.attributes.username,
         },
         token: json.token
       }, () => this.props.history.push('/user_main'))
     }
   }
 
-  userLogin = ({name, password}) => {
+  userLogin = ({username, password}) => {
     let user = {
-      name: name,
+      username: username,
       password: password
     }
 
@@ -64,11 +62,10 @@ class App extends React.Component {
     })
   }
 
-  userSignUp = ({name, password, age}) => {
+  userSignUp = ({username, password}) => {
     let newUser = {
-      name: name,
+      username: username,
       password: password,
-      age: age
     }
     
     fetch('http://localhost:3000/users', {

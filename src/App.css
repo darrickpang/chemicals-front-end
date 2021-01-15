@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.page-header{
+  background-image: url(./image/gettyimages-954979578-2048x2048.jpg);
+}

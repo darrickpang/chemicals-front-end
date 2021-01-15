@@ -6,7 +6,7 @@ class UserMainContent extends React.Component {
     renderUserInfo = () => {
         return (
             <div className="student-info">
-                <h3>User name: {this.props.user.name}</h3>
+                <h3>User name: {this.props.user.username}</h3>
             </div>
         )
     }
@@ -23,14 +23,12 @@ class UserMainContent extends React.Component {
 
     render(){
         return(
-            <Router>
                 <div className="main-page">
                     Welcome to your main page. 
                     {this.renderUserInfo()}
                     {this.renderLogout()} 
 
                 </div> 
-            </Router>
             
         )
     }
