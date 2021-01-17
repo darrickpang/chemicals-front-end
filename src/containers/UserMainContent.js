@@ -1,6 +1,7 @@
 import React from 'react';
 import {  withRouter, BrowserRouter as Router, Route } from 'react-router-dom';
 import { Button } from 'reactstrap';
+import Chemical from '../components/Chemical'
 
 class UserMainContent extends React.Component {
     renderUserInfo = () => {
@@ -21,13 +22,21 @@ class UserMainContent extends React.Component {
         )
     }
 
+    renderChemicals = () => {
+        return(
+            <div>
+                <Chemical/>
+            </div>
+        )
+    }
+
     render(){
         return(
                 <div className="main-page">
                     Welcome to your main page. 
                     {this.renderUserInfo()}
                     {this.renderLogout()} 
-
+                    {this.renderChemicals()}
                 </div> 
             
         )
