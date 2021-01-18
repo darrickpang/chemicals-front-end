@@ -11,6 +11,7 @@ class App extends React.Component {
       id: null,
       name: "",
     },
+    chemical_user: [],
     token: ""
   }
 
@@ -95,6 +96,58 @@ class App extends React.Component {
 
   renderUserMainContent = () => {
     return <UserMainContent user ={this.state.user} token={this.state.token} />
+  }
+
+  addChemical = (newChemical) => {
+    fetch(`http://localhost:3000/chemical_users`, {
+      method: 'POST', 
+      headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+      },
+      body: JSON.stringify(newChemical),
+    }) 
+    .then(r => r.json())
+    .then(json => {
+      this.setState({
+        chemical_user: [...this.state.chemical_user.data, {
+          id: json.id,
+          name: json.level,
+          time: json.time,
+          date: json.date
+        }]
+      })
+    })
+  }
+
+  updateChemical = (id, chemical_info) => {
+    fetch(`http://localhost:3000/chemcial_users/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify(chemical_info)
+    })
+    .then(res => res.json())
+    .then(json => {
+      let chemical_user = this.state.chemical_user.map(chemical_info => {
+        if(chemical_info.id === json.id){
+            let newChemical = {
+                  id: json.id,
+                  name: json.level,
+                  time: json.time,
+                  date: json.date
+            }
+            return newChemical
+            }
+            else{
+              return chemical_info
+            }
+        })
+        this.setState({
+            chemical_user: chemical_user
+    })})
   }
 
   render(){
