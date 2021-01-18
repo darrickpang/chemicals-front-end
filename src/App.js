@@ -95,7 +95,7 @@ class App extends React.Component {
   }
 
   renderUserMainContent = () => {
-    return <UserMainContent user ={this.state.user} token={this.state.token} />
+    return <UserMainContent user ={this.state.user} token={this.state.token} addChemical={this.addChemical} updateChemical={this.updateChemical}/>
   }
 
   addChemical = (newChemical) => {
