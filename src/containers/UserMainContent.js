@@ -25,18 +25,19 @@ class UserMainContent extends React.Component {
     renderChemicals = () => {
         return(
             <div>
-                <Chemical/>
+
             </div>
         )
     }
 
     render(){
+        let {addChemical, updateChemical} = this.props
         return(
                 <div className="main-page">
                     Welcome to your main page. 
                     {this.renderUserInfo()}
                     {this.renderLogout()} 
-                    {this.renderChemicals()}
+                    <Chemical addChemical={addChemical} updateChemical={updateChemical}/>
                 </div> 
             
         )
