@@ -49,9 +49,9 @@ class Chemical extends React.Component {
         if(selectedValue === "n/a"){
             this.setState({
                 id: null,
-                class_name: null,
+                level: null,
                 date: null,
-                dateAdd: true,
+                time: true,
                 deleteDate: false
             })
         }
@@ -91,7 +91,7 @@ class Chemical extends React.Component {
                                 </FormGroup>
                             </Col>
                         </Row>
-                        <Button className="button">Add gym</Button>
+                        <Button className="button">Add chemical data</Button>
                     </Form> 
                 </CardBody>
             </div>
