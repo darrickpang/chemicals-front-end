@@ -4,23 +4,25 @@ import {  withRouter, BrowserRouter as Router, Route } from 'react-router-dom';
 class Chemical extends React.Component {
 
     state = {
+        id: null, 
         level: null,
         date: null,
         time: null 
     }
     
-    handleSubmit = (e, addDate, updateDate, deleteDate) => {
+    handleSubmit = (e, addChemical, updateDate, deleteDate) => {
         e.preventDefault()
-        let {class_name, date} = this.state
-        if(class_name !== null && date !== null){
+        let {level, date, time} = this.state
+        if(level !== null && date !== null && time !== null){
             let date_info = {
-                class_name: class_name,
+                level: level,
                 date: date,
-                student_id: parseInt(this.props.student.id)
+                time: time,
+                user_id: parseInt(this.props.user.id)
             }
             // persist to database
             if(this.state.dateAdd){
-                addDate(date_info)
+                addChemical(date_info)
             } 
             else if(!this.state.dateAdd && e.target.name === "update"){
                 updateDate(this.state.id, date_info)
@@ -31,15 +33,14 @@ class Chemical extends React.Component {
             // reset state
             this.setState({
                 id: null,
-                class_name: null,
+                level: null,
                 date: null,
-                dateAdd: true,
-                deleteDate: false
+                time: null, 
             })
             e.target.parentElement.reset()
         }
         else{
-            alert("You must include a class name and date to create a new schedule.")
+            alert("You must include pool chemical level, date, and time to submit data.")
         }
     }
 
@@ -69,6 +70,7 @@ class Chemical extends React.Component {
         return(
             <div>
                 Chemical.js 
+                
             </div>
         )
     }
