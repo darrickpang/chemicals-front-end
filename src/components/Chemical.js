@@ -15,7 +15,7 @@ class Chemical extends React.Component {
         e.preventDefault()
         let {level, date, time} = this.state
         if(level !== null && date !== null && time !== null){
-            let date_info = {
+            let chemical_info = {
                 level: level,
                 date: date,
                 time: time,
@@ -23,13 +23,13 @@ class Chemical extends React.Component {
             }
             // persist to database
             if(this.state.dateAdd){
-                addChemical(date_info)
+                addChemical(chemical_info)
             } 
             else if(!this.state.dateAdd && e.target.name === "update"){
-                updateDate(this.state.id, date_info)
+                updateDate(this.state.id, chemical_info)
             }
             else {
-                deleteDate(this.state.id, date_info)
+                deleteDate(this.state.id, chemical_info)
             }
             // reset state
             this.setState({
@@ -45,24 +45,22 @@ class Chemical extends React.Component {
         }
     }
 
-    autoFillForm = (selectedValue, dates) => {
+    autoFillForm = (selectedValue, chemicals) => {
         if(selectedValue === "n/a"){
             this.setState({
                 id: null,
                 level: null,
                 date: null,
                 time: true,
-                deleteDate: false
             })
         }
         else{
-            let find_date = dates.find(date_info => date_info.id == selectedValue)
+            let find_chemical = chemicals.find(chemical_info => chemical_info.id == selectedValue)
             this.setState({
-                id: find_date.id,
-                class_name: find_date.class_name,
-                date: find_date.date,
-                dateAdd: false,
-                deleteDate: true
+                id: find_chemical.id,
+                level: find_chemical.level,
+                date: find_chemical.date,
+                time: find_chemical.time, 
             })
         }
     }
