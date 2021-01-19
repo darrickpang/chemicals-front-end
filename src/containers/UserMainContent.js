@@ -32,6 +32,7 @@ class UserMainContent extends React.Component {
 
     render(){
         let {addChemical, updateChemical, chemical_user} = this.props
+        console.log(chemical_user)
         return(
                 <div className="main-page">
                     Welcome to your main page. 
