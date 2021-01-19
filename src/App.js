@@ -25,6 +25,11 @@ class App extends React.Component {
       .then(res => res.json())
       .then(json => this.userAuthResponse(json))
     }
+
+    // chemicals
+    fetch(`http://localhost:3000/chemical_users`)
+    .then(r => r.json())
+    .then(json => this.setState({chemical_user: json}))
   }
 
   userAuthResponse = (json) => {
@@ -95,7 +100,9 @@ class App extends React.Component {
   }
 
   renderUserMainContent = () => {
-    return <UserMainContent user ={this.state.user} token={this.state.token} addChemical={this.addChemical} updateChemical={this.updateChemical}/>
+    return <UserMainContent user ={this.state.user} token={this.state.token} addChemical={this.addChemical} updateChemical={this.updateChemical} 
+            chemicals={this.state.chemical_user}
+          />
   }
 
   addChemical = (newChemical) => {

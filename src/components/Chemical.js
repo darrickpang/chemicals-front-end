@@ -80,7 +80,7 @@ class Chemical extends React.Component {
                             </Col>
                             <Col md={6}>
                                 <FormGroup>
-                                    <Input type="text" name="date" id="date" placeholder="Today's date" value={this.state.address} onChange={this.handleOnChange}/>
+                                    <Input type="date" name="date" id="date" placeholder="Today's date" value={this.state.address} onChange={this.handleOnChange}/>
                                 </FormGroup>
                             </Col>
                             <Col md={6}>
