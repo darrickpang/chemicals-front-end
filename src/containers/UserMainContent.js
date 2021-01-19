@@ -31,13 +31,13 @@ class UserMainContent extends React.Component {
     }
 
     render(){
-        let {addChemical, updateChemical} = this.props
+        let {addChemical, updateChemical, chemical_user} = this.props
         return(
                 <div className="main-page">
                     Welcome to your main page. 
                     {this.renderUserInfo()}
                     {this.renderLogout()} 
-                    <Chemical addChemical={addChemical} updateChemical={updateChemical}/>
+                    <Chemical addChemical={addChemical} updateChemical={updateChemical} chemical_user={chemical_user}/>
                 </div> 
             
         )

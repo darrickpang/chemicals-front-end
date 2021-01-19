@@ -18,8 +18,7 @@ class Chemical extends React.Component {
             let chemical_info = {
                 level: level,
                 date: date,
-                time: time,
-                user_id: parseInt(this.props.user.id)
+                time: time
             }
             // persist to database
             if(this.state.dateAdd){
@@ -66,10 +65,11 @@ class Chemical extends React.Component {
     }
 
     render(){
-        let addChemical = this.props
+        let {addChemical, chemical_user} = this.props
         return(
             <div>
-                Chemical.js 
+                Add chemical levels
+                {chemical_user}
                 <CardBody>
                     <Form onSubmit={(e) => this.handleSubmit(e, addChemical)}>
                         <Row form>
