@@ -1,5 +1,6 @@
 import React from 'react';
 import {  withRouter, BrowserRouter as Router, Route } from 'react-router-dom';
+import {CardBody, Button, Form, Input, FormGroup, Row, Col} from 'reactstrap'
 
 class Chemical extends React.Component {
 
@@ -70,7 +71,33 @@ class Chemical extends React.Component {
         return(
             <div>
                 Chemical.js 
-                
+                <CardBody>
+                    <Form onSubmit={(e) => this.handleSubmit(e, addGym)}>
+                        <Row form>
+                            <Col md={6}>
+                                <FormGroup>
+                                    <Input type="text" name="name" id="name" placeholder="Gym name" value={this.state.name} onChange={this.handleOnChange}/>
+                                </FormGroup>
+                            </Col>
+                            <Col md={6}>
+                                <FormGroup>
+                                    <Input type="text" name="address" id="address" placeholder="Gym address" value={this.state.address} onChange={this.handleOnChange}/>
+                                </FormGroup>
+                            </Col>
+                            <Col md={6}>
+                                <FormGroup>
+                                    <Input type="text" name="city" id="city" placeholder="Gym city" value={this.state.city} onChange={this.handleOnChange}/>
+                                </FormGroup>
+                            </Col>
+                            <Col md={6}>
+                                <FormGroup>
+                                    <Input type="text" name="zip_code" id="zip_code" placeholder="Gym zip code" value={this.state.zip_code} onChange={this.handleOnChange}/>
+                                </FormGroup>
+                            </Col>
+                        </Row>
+                        <Button className="button">Add gym</Button>
+                    </Form> 
+                </CardBody>
             </div>
         )
     }

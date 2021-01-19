@@ -37,7 +37,7 @@ class UserMainContent extends React.Component {
                     Welcome to your main page. 
                     {this.renderUserInfo()}
                     {this.renderLogout()} 
-                    <Chemical addChemical={addChemical} updateChemical={updateChemical}/>
+                    {/* <Chemical addChemical={addChemical} updateChemical={updateChemical}/> */}
                 </div> 
             
         )
