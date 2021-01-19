@@ -68,6 +68,7 @@ class Chemical extends React.Component {
     }
 
     render(){
+        let addChemical = this.props
         return(
             <div>
                 Chemical.js 
