@@ -72,26 +72,21 @@ class Chemical extends React.Component {
             <div>
                 Chemical.js 
                 <CardBody>
-                    <Form onSubmit={(e) => this.handleSubmit(e, addGym)}>
+                    <Form onSubmit={(e) => this.handleSubmit(e, addChemical)}>
                         <Row form>
                             <Col md={6}>
                                 <FormGroup>
-                                    <Input type="text" name="name" id="name" placeholder="Gym name" value={this.state.name} onChange={this.handleOnChange}/>
+                                    <Input type="text" name="level" id="level" placeholder="Pool chemical level" value={this.state.name} onChange={this.handleOnChange}/>
                                 </FormGroup>
                             </Col>
                             <Col md={6}>
                                 <FormGroup>
-                                    <Input type="text" name="address" id="address" placeholder="Gym address" value={this.state.address} onChange={this.handleOnChange}/>
+                                    <Input type="text" name="date" id="date" placeholder="Today's date" value={this.state.address} onChange={this.handleOnChange}/>
                                 </FormGroup>
                             </Col>
                             <Col md={6}>
                                 <FormGroup>
-                                    <Input type="text" name="city" id="city" placeholder="Gym city" value={this.state.city} onChange={this.handleOnChange}/>
-                                </FormGroup>
-                            </Col>
-                            <Col md={6}>
-                                <FormGroup>
-                                    <Input type="text" name="zip_code" id="zip_code" placeholder="Gym zip code" value={this.state.zip_code} onChange={this.handleOnChange}/>
+                                    <Input type="text" name="time" id="time" placeholder="Current Time" value={this.state.city} onChange={this.handleOnChange}/>
                                 </FormGroup>
                             </Col>
                         </Row>
