@@ -27,7 +27,10 @@ class UserMainContent extends React.Component {
             <div>
                 test
                 {this.props.chemicals.map(chemical => {
-                    <p>{chemical.level}</p>
+                    return(
+                        <p>Date: {chemical.date}, Chemical level: {chemical.level} PPM, Time: {chemical.time}</p>
+                    )
+                    
                 })}
             </div>
         )
@@ -35,7 +38,7 @@ class UserMainContent extends React.Component {
 
     render(){
         let {addChemical, updateChemical} = this.props
-        console.log(this.props.chemicals[0])
+        console.log(this.props.chemicals)
         return(
             <div className="main-page">
                 Welcome to your main page. 
