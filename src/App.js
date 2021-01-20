@@ -27,9 +27,9 @@ class App extends React.Component {
     }
 
     // chemicals
-    fetch(`http://localhost:3000/chemical_users`)
-    .then(r => r.json())
-    .then(json => this.setState({chemical_user: json}))
+    // fetch(`http://localhost:3000/chemical_users`)
+    // .then(r => r.json())
+    // .then(json => this.setState({chemical_user: json}))
   }
 
   userAuthResponse = (json) => {
@@ -40,7 +40,7 @@ class App extends React.Component {
           id: json.user.data.attributes.id,
           name: json.user.data.attributes.name,
         },
-        chemical_user: json.user.data.attributes.chemical_users.level, 
+        chemical_user: json.user.data.attributes.chemical_users, 
         token: json.token
       }, () => this.props.history.push('/user_main'))
     }
@@ -159,7 +159,6 @@ class App extends React.Component {
   }
 
   render(){
-    console.log(this.state.chemical_user) 
     return (
       <div className="App">
         <Switch>

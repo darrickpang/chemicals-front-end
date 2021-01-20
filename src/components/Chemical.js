@@ -64,20 +64,11 @@ class Chemical extends React.Component {
         }
     }
 
-    renderData = () => {
-        return(
-            <div>
-                {this.props.chemical_user}
-            </div>
-        )
-    }
-
     render(){
         let {addChemical} = this.props
         return(
             <div>
                 Add chemical levels
-                {this.renderData()}
                 <CardBody>
                     <Form onSubmit={(e) => this.handleSubmit(e, addChemical)}>
                         <Row form>
