@@ -25,10 +25,9 @@ class UserMainContent extends React.Component {
     renderChemicals = () => {
         return(
             <div>
-                test
                 {this.props.chemicals.map(chemical => {
                     return(
-                        <p>Date: {chemical.date}, Chemical level: {chemical.level} PPM, Time: {chemical.time}</p>
+                        <p>Date: {chemical.date}, Chlorine level: {chemical.level} PPM, Time: {chemical.time}</p>
                     )
                     
                 })}
