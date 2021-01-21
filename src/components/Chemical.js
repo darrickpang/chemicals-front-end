@@ -26,12 +26,12 @@ class Chemical extends React.Component {
             if(this.state.chemicalAdd){
                 addChemical(chemical_info)
             } 
-            else if(!this.state.dateAdd && e.target.name === "update"){
-                updateDate(this.state.id, chemical_info)
-            }
-            else {
-                deleteDate(this.state.id, chemical_info)
-            }
+            // else if(!this.state.dateAdd && e.target.name === "update"){
+            //     updateDate(this.state.id, chemical_info)
+            // }
+            // else {
+            //     deleteDate(this.state.id, chemical_info)
+            // }
             // reset state
             this.setState({
                 id: null,
@@ -68,8 +68,11 @@ class Chemical extends React.Component {
     }
 
     render(){
-        let {addChemical} = this.props
-        console.log(this.props.user.name)
+        let {addChemical, user} = this.props
+        if (!user.id) {
+            return <span>Loading...</span>;
+        }
+        console.log(parseInt(this.props.user.id))
         return(
             <div>
                 Add chemical levels

@@ -25,11 +25,6 @@ class App extends React.Component {
       .then(res => res.json())
       .then(json => this.userAuthResponse(json))
     }
-
-    // chemicals
-    fetch(`http://localhost:3000/chemical_users`)
-    .then(r => r.json())
-    .then(json => this.setState({chemical_user: json}))
   }
 
   userAuthResponse = (json) => {
