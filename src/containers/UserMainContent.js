@@ -29,7 +29,6 @@ class UserMainContent extends React.Component {
                     return(
                         <p>Date: {chemical.date}, Chlorine level: {chemical.level} PPM, Time: {chemical.time}</p>
                     )
-                    
                 })}
             </div>
         )
