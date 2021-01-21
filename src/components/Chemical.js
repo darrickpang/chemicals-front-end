@@ -8,7 +8,8 @@ class Chemical extends React.Component {
         id: null, 
         level: null,
         date: null,
-        time: null 
+        time: null,
+        chemicalAdd: true
     }
     
     handleSubmit = (e, addChemical, updateDate, deleteDate) => {
@@ -21,7 +22,7 @@ class Chemical extends React.Component {
                 time: time
             }
             // persist to database
-            if(this.state.dateAdd){
+            if(this.state.chemicalAdd){
                 addChemical(chemical_info)
             } 
             else if(!this.state.dateAdd && e.target.name === "update"){
@@ -36,6 +37,7 @@ class Chemical extends React.Component {
                 level: null,
                 date: null,
                 time: null, 
+                chemicalAdd: true
             })
             e.target.parentElement.reset()
         }
