@@ -113,7 +113,7 @@ class App extends React.Component {
     .then(r => r.json())
     .then(json => {
       this.setState({
-        chemical_user: [...this.state.chemical_user.data, {
+        chemical_user: [...this.state.chemical_user, {
           id: json.id,
           name: json.level,
           time: json.time,

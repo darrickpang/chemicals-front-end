@@ -12,7 +12,13 @@ class Chemical extends React.Component {
         chemicalAdd: true
     }
     
-    handleSubmit = (e, addChemical, updateDate, deleteDate) => {
+    handleOnChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+    handleSubmit = (e, addChemical) => {
         e.preventDefault()
         let {level, date, time} = this.state
         if(level !== null && date !== null && time !== null){
@@ -40,11 +46,12 @@ class Chemical extends React.Component {
                 time: null, 
                 chemicalAdd: true
             })
-            e.target.parentElement.reset()
+            e.target.reset()
         }
         else{
             alert("You must include pool chemical level, date, and time to submit data.")
         }
+        console.log(e.target)
     }
 
     autoFillForm = (selectedValue, chemicals) => {
@@ -53,7 +60,8 @@ class Chemical extends React.Component {
                 id: null,
                 level: null,
                 date: null,
-                time: true,
+                time: null,
+                chemicalAdd: true 
             })
         }
         else{
@@ -63,6 +71,7 @@ class Chemical extends React.Component {
                 level: find_chemical.level,
                 date: find_chemical.date,
                 time: find_chemical.time, 
+                chemicalAdd: false
             })
         }
     }
@@ -72,7 +81,7 @@ class Chemical extends React.Component {
         if (!user.id) {
             return <span>Loading...</span>;
         }
-        console.log(parseInt(this.props.user.id))
+
         return(
             <div>
                 Add chemical levels
