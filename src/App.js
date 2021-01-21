@@ -27,9 +27,9 @@ class App extends React.Component {
     }
 
     // chemicals
-    // fetch(`http://localhost:3000/chemical_users`)
-    // .then(r => r.json())
-    // .then(json => this.setState({chemical_user: json}))
+    fetch(`http://localhost:3000/chemical_users`)
+    .then(r => r.json())
+    .then(json => this.setState({chemical_user: json}))
   }
 
   userAuthResponse = (json) => {

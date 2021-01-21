@@ -19,7 +19,8 @@ class Chemical extends React.Component {
             let chemical_info = {
                 level: level,
                 date: date,
-                time: time
+                time: time,
+                user_id: parseInt(this.props.user.id)
             }
             // persist to database
             if(this.state.chemicalAdd){
@@ -68,6 +69,7 @@ class Chemical extends React.Component {
 
     render(){
         let {addChemical} = this.props
+        console.log(this.props.user.name)
         return(
             <div>
                 Add chemical levels
