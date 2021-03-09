@@ -25,7 +25,7 @@ class UserMainContent extends React.Component {
     renderChemicals = () => {
         return(
             <div>
-                {this.props.chemicals.map(chemical => {
+                {this.props.chemicals.slice(0).reverse().map(chemical => {
                     return(
                         <p>Date: {chemical.date}, Chlorine level: {chemical.level} PPM, Time: {chemical.time}</p>
                     )
