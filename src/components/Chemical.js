@@ -90,17 +90,17 @@ class Chemical extends React.Component {
                         <Row form>
                             <Col md={6}>
                                 <FormGroup>
-                                    <Input type="text" name="level" id="level" placeholder="Pool chemical level" value={this.state.name} onChange={this.handleOnChange}/>
+                                    <Input type="text" name="level" id="level" placeholder="Pool chemical level" value={this.state.level} onChange={this.handleOnChange}/>
                                 </FormGroup>
                             </Col>
                             <Col md={6}>
                                 <FormGroup>
-                                    <Input type="date" name="date" id="date" placeholder="Today's date" value={this.state.address} onChange={this.handleOnChange}/>
+                                    <Input type="date" name="date" id="date" placeholder="Today's date" value={this.state.date} onChange={this.handleOnChange}/>
                                 </FormGroup>
                             </Col>
                             <Col md={6}>
                                 <FormGroup>
-                                    <Input type="text" name="time" id="time" placeholder="Current Time" value={this.state.city} onChange={this.handleOnChange}/>
+                                    <Input type="text" name="time" id="time" placeholder="Current Time" value={this.state.time} onChange={this.handleOnChange}/>
                                 </FormGroup>
                             </Col>
                         </Row>

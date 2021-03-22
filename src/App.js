@@ -115,7 +115,7 @@ class App extends React.Component {
       this.setState({
         chemical_user: [...this.state.chemical_user, {
           id: json.id,
-          name: json.level,
+          level: json.level,
           time: json.time,
           date: json.date
         }]
@@ -138,7 +138,7 @@ class App extends React.Component {
         if(chemical_info.id === json.id){
             let newChemical = {
                   id: json.id,
-                  name: json.level,
+                  level: json.level,
                   time: json.time,
                   date: json.date
             }
